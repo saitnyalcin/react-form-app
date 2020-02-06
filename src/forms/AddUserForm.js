@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AddUserForm = props => {
+const AddUserForm = ({ addUser }) => {
   const initialFormState = { id: null, name: '', username: '' };
   const [user, setUser] = useState(initialFormState);
 
@@ -16,7 +16,7 @@ const AddUserForm = props => {
         event.preventDefault();
         if (!user.name || !user.username) return;
 
-        props.addUser(user);
+        addUser(user);
         setUser(initialFormState);
       }}
     >
